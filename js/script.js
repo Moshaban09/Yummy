@@ -55,118 +55,153 @@ async function fetchData(url) {
 
 async function searchByName(term) {
   showInnerLoading();
-  const response = await fetchData(
-    `https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`
-  );
+  try {
+    const response = await fetchData(
+      `https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`
+    );
 
-  if (response && response.meals) {
-    displayMeals(response.meals);
-  } else {
-    rowData.innerHTML = "<p>No meals found.</p>";
+    if (response && response.meals) {
+      displayMeals(response.meals);
+    } else {
+      rowData.innerHTML = "<p>No meals found.</p>";
+    }
+  } finally {
+    hideInnerLoading();
   }
-  hideInnerLoading();
 }
 
 async function searchByFLetter(letter) {
   showInnerLoading();
-  letter = letter || "a";
-  const response = await fetchData(
-    `https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`
-  );
+  try {
+    letter = letter || "a";
+    const response = await fetchData(
+      `https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`
+    );
 
-  if (response && response.meals) {
-    displayMeals(response.meals);
-  } else {
-    rowData.innerHTML = "<p>No meals found.</p>";
+    if (response && response.meals) {
+      displayMeals(response.meals);
+    } else {
+      rowData.innerHTML = "<p>No meals found.</p>";
+    }
+  } finally {
+    hideInnerLoading();
   }
-  hideInnerLoading();
 }
 
 async function getCategories() {
   clearSearchContainer();
   showInnerLoading();
-  const response = await fetchData(
-    "https://www.themealdb.com/api/json/v1/1/categories.php"
-  );
+  try {
+    const response = await fetchData(
+      "https://www.themealdb.com/api/json/v1/1/categories.php"
+    );
 
-  if (response && response.categories) {
-    displayCategories(response.categories);
+    if (response && response.categories) {
+      displayCategories(response.categories);
+    }
+  } finally {
+    hideInnerLoading();
   }
-  hideInnerLoading();
 }
 
 async function getCategoryMeals(category) {
   showInnerLoading();
-  const response = await fetchData(
-    `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`
-  );
+  try {
+    const response = await fetchData(
+      `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`
+    );
 
-  if (response && response.meals) {
-    displayMeals(response.meals);
+    if (response && response.meals) {
+      displayMeals(response.meals);
+    } else {
+      rowData.innerHTML = "<p>No meals found.</p>";
+    }
+  } finally {
+    hideInnerLoading();
   }
-  hideInnerLoading();
 }
 
 async function getArea() {
   clearSearchContainer();
   showInnerLoading();
-  const response = await fetchData(
-    "https://www.themealdb.com/api/json/v1/1/list.php?a=list"
-  );
+  try {
+    const response = await fetchData(
+      "https://www.themealdb.com/api/json/v1/1/list.php?a=list"
+    );
 
-  if (response && response.meals) {
-    displayArea(response.meals);
+    if (response && response.meals) {
+      displayArea(response.meals);
+    }
+  } finally {
+    hideInnerLoading();
   }
-  hideInnerLoading();
 }
 
 async function getAreaMeals(area) {
   showInnerLoading();
-  const response = await fetchData(
-    `https://www.themealdb.com/api/json/v1/1/filter.php?a=${area}`
-  );
+  try {
+    const response = await fetchData(
+      `https://www.themealdb.com/api/json/v1/1/filter.php?a=${area}`
+    );
 
-  if (response && response.meals) {
-    displayMeals(response.meals);
+    if (response && response.meals) {
+      displayMeals(response.meals);
+    } else {
+      rowData.innerHTML = "<p>No meals found.</p>";
+    }
+  } finally {
+    hideInnerLoading();
   }
-  hideInnerLoading();
 }
 
 async function getIngredients() {
   clearSearchContainer();
   showInnerLoading();
-  const response = await fetchData(
-    "https://www.themealdb.com/api/json/v1/1/list.php?i=list"
-  );
+  try {
+    const response = await fetchData(
+      "https://www.themealdb.com/api/json/v1/1/list.php?i=list"
+    );
 
-  if (response && response.meals) {
-    displayIngredients(response.meals.slice(0, 20));
+    if (response && response.meals) {
+      displayIngredients(response.meals.slice(0, 20));
+    }
+  } finally {
+    hideInnerLoading();
   }
-  hideInnerLoading();
 }
 
 async function getIngredientsMeals(ingredient) {
   showInnerLoading();
-  const response = await fetchData(
-    `https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`
-  );
+  try {
+    const response = await fetchData(
+      `https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`
+    );
 
-  if (response && response.meals) {
-    displayMeals(response.meals);
+    if (response && response.meals) {
+      displayMeals(response.meals);
+    } else {
+      rowData.innerHTML = "<p>No meals found.</p>";
+    }
+  } finally {
+    hideInnerLoading();
   }
-  hideInnerLoading();
 }
 
 async function getMealDetails(mealID) {
   showInnerLoading();
-  const response = await fetchData(
-    `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`
-  );
+  try {
+    const response = await fetchData(
+      `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`
+    );
 
-  if (response && response.meals) {
-    displayMealDetails(response.meals[0]);
+    if (response && response.meals) {
+      displayMealDetails(response.meals[0]);
+    } else {
+      rowData.innerHTML = "<p>No meal details found.</p>";
+    }
+  } finally {
+    hideInnerLoading();
   }
-  hideInnerLoading();
 }
 
 /* ========================================
@@ -676,6 +711,9 @@ navLinks.forEach((link, index) => {
 });
 
 (async function initApp() {
-  await searchByName("");
-  hideLoadingScreen();
+  try {
+    await searchByName("");
+  } finally {
+    hideLoadingScreen();
+  }
 })();
