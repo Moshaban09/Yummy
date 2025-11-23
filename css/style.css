@@ -1,0 +1,312 @@
+body {
+  background-color: #0d0d0d;
+  color: #f9f6f6 !important;
+}
+
+.nav-tab {
+  background-color: #0d0d0d;
+}
+
+.logo {
+  width: 50px;
+}
+
+.side-nav-menu {
+  z-index: 99;
+  left: 0;
+  transition: left 0.5s ease;
+}
+
+.side-nav-menu.closed {
+  left: -250px;
+}
+
+@media (max-width: 768px) {
+  .side-nav-menu.closed {
+    left: -200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .side-nav-menu.closed {
+    left: -180px;
+  }
+}
+
+.links li {
+  transition: all 0.3s ease;
+}
+
+.links li:hover {
+  transform: translateX(5px);
+  color: #ffc107;
+}
+
+.links li:active {
+  transform: translateX(8px);
+  color: #ffc107;
+}
+
+.open-close-icon {
+  transition: all 0.3s ease;
+}
+
+.open-close-icon:hover {
+  transform: scale(1.1);
+  color: #ffc107;
+}
+
+.open-close-icon:active {
+  transform: scale(0.9);
+}
+
+i {
+  transition: all 0.3s ease;
+}
+
+i:hover {
+  color: #ffc107;
+  transform: scale(1.05);
+}
+
+i:active {
+  transform: scale(0.95);
+}
+
+.meal {
+  transition: all 0.3s ease;
+}
+
+.meal:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 193, 7, 0.25);
+}
+
+.meal:active {
+  transform: scale(0.97);
+}
+
+.meal img {
+  transition: all 0.3s ease;
+}
+
+.meal:hover img {
+  transform: scale(1.03);
+}
+
+.meal:active img {
+  transform: scale(0.98);
+}
+
+.meal-layer {
+  width: 100%;
+  height: 100%;
+  background-color: #f9f6f6ca;
+  top: 100%;
+  transition: 0.5s;
+}
+
+.meal:hover .meal-layer {
+  top: 0;
+}
+
+.meal-card {
+  transition: all 0.3s ease;
+}
+
+.meal-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 193, 7, 0.25);
+}
+
+.meal-card:active {
+  transform: scale(0.97);
+  box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
+}
+
+img {
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+img:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+img:active {
+  transform: scale(0.95);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-pointer:hover {
+  opacity: 0.85;
+}
+
+.cursor-pointer:active {
+  transform: scale(0.98);
+}
+
+.alert {
+  width: fit-content;
+}
+
+.loading-screen {
+  z-index: 999;
+  display: flex;
+}
+
+.inner-loading-screen {
+  position: absolute;
+  z-index: 9;
+  background-color: #0d0d0d;
+  display: flex;
+}
+
+#searchContainer input {
+  border: 1px solid #444;
+  padding: 12px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+#searchContainer input:focus {
+  outline: none;
+  border-color: #ffc107;
+  box-shadow: 0 0 10px rgba(255, 193, 7, 0.3);
+  background-color: rgba(255, 193, 7, 0.05);
+}
+
+#searchContainer input::placeholder {
+  color: #999;
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow-y: auto;
+  }
+
+  .logo {
+    width: 40px;
+  }
+
+  .nav-tab {
+    width: 200px !important;
+  }
+
+  .links li {
+    font-size: 18px;
+    padding: 8px 0 !important;
+  }
+
+  .open-close-icon {
+    font-size: 1.5rem !important;
+  }
+
+  .meal-layer h3 {
+    font-size: 1.2rem;
+  }
+
+  .meal-layer p {
+    font-size: 0.85rem;
+  }
+
+  .meal-card {
+    margin-bottom: 15px;
+  }
+
+  .meal-card i {
+    font-size: 2.5rem !important;
+  }
+
+  .meal-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .meal-card p {
+    font-size: 0.9rem;
+  }
+
+  #searchContainer input {
+    padding: 10px 15px;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .contact .container {
+    width: 95% !important;
+  }
+
+  .contact input {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .contact .alert {
+    font-size: 12px;
+    padding: 5px !important;
+  }
+
+  .contact button {
+    font-size: 16px;
+    padding: 10px 30px !important;
+  }
+
+  .col-md-3 {
+    padding: 0 8px;
+  }
+
+  .row {
+    margin: 0 -8px;
+  }
+
+  .meal:hover {
+    transform: translateY(-3px);
+  }
+
+  .meal-card:hover {
+    transform: translateY(-3px);
+  }
+}
+
+@media (max-width: 576px) {
+  .nav-tab {
+    width: 180px !important;
+  }
+
+  .links li {
+    font-size: 16px;
+  }
+
+  .meal-layer h3 {
+    font-size: 1rem;
+  }
+
+  .meal-layer p {
+    font-size: 0.75rem;
+  }
+
+  .meal-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .meal-card p {
+    font-size: 0.8rem;
+  }
+
+  .meal-card i {
+    font-size: 2rem !important;
+  }
+
+  #searchContainer input {
+    font-size: 13px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
