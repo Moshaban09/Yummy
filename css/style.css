@@ -90,6 +90,13 @@ i:active {
   transition: all 0.3s ease;
 }
 
+.meal img,
+.meal-card img {
+  min-height: 160px;
+  object-fit: cover;
+  background-color: #111;
+}
+
 .meal:hover img {
   transform: scale(1.03);
 }
@@ -164,6 +171,35 @@ img:active {
   z-index: 9;
   background-color: #0d0d0d;
   display: flex;
+}
+
+/* Loader visuals & animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-screen,
+.inner-loading-screen {
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  pointer-events: auto;
+}
+
+.loading-screen i,
+.inner-loading-screen i {
+  display: inline-block;
+  color: #ffc107;
+  animation: spin 1s linear infinite;
+}
+
+.loading-screen i {
+  font-size: 4rem;
+}
+.inner-loading-screen i {
+  font-size: 3rem;
 }
 
 #searchContainer input {

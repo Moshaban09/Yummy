@@ -222,6 +222,8 @@ function displayMeals(arr) {
 
     const img = document.createElement("img");
     img.className = "w-100";
+    img.loading = "lazy";
+    img.decoding = "async";
     img.src = meal.strMealThumb;
     img.alt = meal.strMeal;
 
@@ -250,6 +252,8 @@ function displayMealDetails(meal) {
 
   const img = document.createElement("img");
   img.className = "w-100 rounded-3";
+  img.loading = "lazy";
+  img.decoding = "async";
   img.src = meal.strMealThumb;
   img.alt = meal.strMeal;
 
@@ -352,6 +356,8 @@ function displayCategories(arr) {
 
     const img = document.createElement("img");
     img.className = "w-100";
+    img.loading = "lazy";
+    img.decoding = "async";
     img.src = category.strCategoryThumb;
     img.alt = category.strCategory;
 
